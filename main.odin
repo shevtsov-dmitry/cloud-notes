@@ -1,7 +1,8 @@
 package main
 
-import log "core:fmt"
+import "client"
 
 main :: proc() {
+	client.show_greeting()
 
 }
