@@ -1,0 +1,33 @@
+cabal-version:      3.0
+name:               haskell-app
+version:            0.1.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             shevtsov-dmitry
+maintainer:         shadowstakeus28@gmail.com
+category:           Text
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+    exposed-modules:  MyLib
+    hs-source-dirs:   src
+    build-depends:    base >=4.7 && <5
+    default-language: Haskell2010
+
+executable haskell-app
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:    base >=4.7 && <5, haskell-app
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+test-suite haskell-app-test
+    type:             exitcode-stdio-1.0
+    main-is:          MainTest.hs
+    build-depends:    base >=4.7 && <5, HUnit, haskell-app
+    hs-source-dirs:   test
+    default-language: Haskell2010
