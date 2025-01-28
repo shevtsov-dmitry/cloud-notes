@@ -1,4 +1,24 @@
-dist-newstyle/
+node_modules/
 
-.zig-cache/
-zig-out/
+/target
+/checkouts
+/src/gen
+/src/get_started/
+.cpcache/
+/build
+
+pom.xml
+pom.xml.asc
+*.iml
+*.jar
+*.log
+.shadow-cljs
+.idea
+.lein-*
+.nrepl-*
+.DS_Store
+
+.calva/output-window
+.calva/repl.calva-repl
+.lsp/.cache
+.clj-kondo/.cache
