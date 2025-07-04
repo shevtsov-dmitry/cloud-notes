@@ -1,4 +1,4 @@
-package io.cloudnotes;
+package io;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 
