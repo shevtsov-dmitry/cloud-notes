@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "tailwind-tauri",
+  "productName": "Cloud notes",
   "version": "0.1.0",
-  "identifier": "com.tailwind-tauri.app",
+  "identifier": "com.cloud-notes.app",
   "build": {
     "beforeDevCommand": "pnpm dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "tailwind-tauri",
+        "title": "Cloud notes",
         "width": 800,
         "height": 600
       }
