@@ -1,4 +1,4 @@
-package io;
+package io.cloudnotes;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
