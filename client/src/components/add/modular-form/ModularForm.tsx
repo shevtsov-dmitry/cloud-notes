@@ -1,7 +1,34 @@
-import { ReactElement } from 'react'
+import { ReactElement, ReactNode } from 'react'
 
-const ModularForm = (): ReactElement => <> </>
+// const ModularForm = (): ReactElement => <> </>
 
-export default ModularForm
+interface FormWrapperProps {
+    children: ReactNode
+}
 
-export const FormWrapper = (): ReactElement => <> </>
+export const FormWrapper = ({ children }: FormWrapperProps): ReactElement => (
+    <div className="flex h-1/2 w-2/3 flex-col gap-2 rounded-2xl bg-neutral-700/80 p-5">
+        {children}
+    </div>
+)
+
+export const TitleInput = (): ReactElement => (
+    <input
+        type="text"
+        className="h-12 w-full rounded border-2 border-zinc-200 bg-neutral-500 p-5 text-2xl text-white placeholder:text-neutral-300"
+        placeholder="letter title"
+    />
+)
+
+enum ContentInputKind {
+    TEXT,
+    IMAGE,
+    AUDIO,
+}
+
+export const ContentInput = (): ReactElement => (
+    <textarea
+        className="h-12 w-full flex-1 rounded border-2 border-zinc-200 bg-neutral-500 p-5 text-2xl text-white placeholder:text-neutral-300"
+        placeholder="text content"
+    />
+)

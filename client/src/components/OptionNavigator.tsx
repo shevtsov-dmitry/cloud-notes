@@ -2,6 +2,7 @@ import { ReactElement } from 'react'
 import { useNavigate } from 'react-router'
 
 const OptionNavigator = (): ReactElement => {
+    // TODO add slight transition for page navigation
     const navigate = useNavigate()
 
     const styles = {
