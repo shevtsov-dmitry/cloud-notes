@@ -4,14 +4,18 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // 'nav-bar': ['NavBarFont', 'sans-serif'],
+        "form-input-regular": ["MPLUS1p-Regular", "sans-serif"],
+        "form-input-medium": ["MPLUS1p-Medium", "sans-serif"],
       },
       screens: {
         laptop: "1700px",
         mobile: "1133px",
       },
-      colors: {},
+      colors: {
+        testpink: "#ff00ff",
+      },
     },
   },
-  plugins: ["prettier-plugin-tailwindcss"],
+  // "prettier-plugin-tailwindcss"
+  plugins: [],
 };

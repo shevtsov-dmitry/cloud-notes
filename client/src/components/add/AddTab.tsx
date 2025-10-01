@@ -3,6 +3,7 @@ import BackArrow from '../mutual/BackArrow'
 import {
     ContentInput,
     FormWrapper,
+    SaveButton,
     TitleInput,
 } from './modular-form/ModularForm'
 
@@ -11,11 +12,9 @@ const AddTab = (): ReactElement => {
         <div className="flex h-screen w-full items-center justify-center">
             <BackArrow fixedOnLeftTopCorner />
             <FormWrapper>
-                <h1 className="w-full text-neutral-400">
-                    Press Enter to save note
-                </h1>
                 <TitleInput />
                 <ContentInput />
+                <SaveButton />
             </FormWrapper>
         </div>
     )
