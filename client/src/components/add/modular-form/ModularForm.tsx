@@ -38,7 +38,7 @@ export const ContentInput = (): ReactElement => (
 
 export const SaveButton = (): ReactElement => (
     <div className="flex w-full justify-center">
-        <button className="rounded-2xl border-2 border-neutral-300 bg-zinc-500/80 px-[1.5%] py-[0.5%] font-mono text-3xl font-extrabold text-white">
+        <button className="hover:bg-neutral-200 hover:text-neutral-600 hover:cursor-pointer transition-colors rounded-2xl border-2 border-neutral-300 bg-zinc-500/80 px-[1.5%] py-[0.5%] font-mono text-3xl font-extrabold text-white">
             Save & Sync
         </button>
     </div>
