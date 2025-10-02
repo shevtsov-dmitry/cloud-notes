@@ -1,5 +1,6 @@
 import { ReactElement } from 'react'
 import { useNavigate } from 'react-router'
+import DefinedRoutes from './components/routes/DefinedRoutes'
 
 const App = (): ReactElement => {
     const navigate = useNavigate()
@@ -21,7 +22,7 @@ const App = (): ReactElement => {
                 standard.
             </h1>
             <div className="bg-testpink h-32 w-32"></div>
-            {/*<DefinedRoutes />*/}
+            <DefinedRoutes />
         </main>
     )
 }
