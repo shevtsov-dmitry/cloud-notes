@@ -19,7 +19,7 @@ export const TitleInput = (): ReactElement => (
     <input
         type="text"
         className="font-form-input-medium h-12 w-full rounded border-2 border-zinc-200 bg-neutral-500 p-5 text-2xl text-white placeholder:text-neutral-300"
-        placeholder="letter title"
+        placeholder="letter title" 
     />
 )
 
