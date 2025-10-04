@@ -10,7 +10,7 @@ const App = (): ReactElement => {
             className={'min-h-screen max-w-dvw'}
             style={{
                 backgroundImage:
-                    'linear-gradient(to top, #241f22, #282328, #2c272f, #2f2c36, #30313d, #2d323e, #2b333e, #28343e, #243137, #222d31, #21292a, #202525)',
+                    'linear-gradient(to top, #241f22, #282328, #2c272f, #2f2c36, #30313d, #333333, #2b333e, #28343e, #243137, #222d31, #21292a, #202525)',
             }}
         >
             <DefinedRoutes />

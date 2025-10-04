@@ -1,10 +1,10 @@
-package app.cloudnotes;
+package app.cloudnotes.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CloudnotesApplicationTests {
+class ServerApplicationTests {
 
 	@Test
 	void contextLoads() {
