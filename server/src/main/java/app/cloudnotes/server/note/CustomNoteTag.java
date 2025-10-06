@@ -10,17 +10,18 @@ import jakarta.persistence.Table;
 @Entity
 public class CustomNoteTag {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  @Column(unique = true)
-  private String name;
+    @Column(unique = true)
+    private String name;
 
-  private String colorHEX;
+    private String colorHEX;
 
-  public void setRandomHEXColor() {
-    this.colorHEX = "#" + Integer.toHexString((int) (Math.random() * 16777215)).substring(2, 8);
-  }
+    public void setRandomHEXColor() {
+        this.colorHEX = "#" + Integer.toHexString((int) (Math.random() * 16777215)).substring(2, 8);
+    }
+
 
 }
