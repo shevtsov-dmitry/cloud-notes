@@ -2,6 +2,7 @@ package app.cloudnotes.server.note.api.v0;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.transaction.Transactional;
+import lombok.Data;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -29,6 +30,13 @@ class TextNoteControllerTest {
 
     private static final String DOMAIN_URL = "http://localhost:8080";
     private static final String API_PATH = DOMAIN_URL + "/api/v0/notes";
+
+    @Data
+    private static class Note {
+        private String title;
+        private String textContent;
+
+    }
 
     @Test
     void createTextNote_verifyItWasSaved() throws Exception {
