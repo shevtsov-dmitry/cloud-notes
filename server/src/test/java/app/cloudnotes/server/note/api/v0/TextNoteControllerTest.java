@@ -1,8 +1,8 @@
 package app.cloudnotes.server.note.api.v0;
 
 import app.cloudnotes.server.note.Note;
-import app.cloudnotes.server.note.notekinds.TextNote;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,26 +18,27 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@Slf4j
 @SpringBootTest
+@Transactional
 @AutoConfigureMockMvc
 class TextNoteControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
+    @Autowired
     private ObjectMapper objectMapper;
 
     private static final String DOMAIN_URL = "http://localhost:8080";
-    private static final String API_PATH = DOMAIN_URL + "/api/v0/notes/text";
+    private static final String API_PATH = DOMAIN_URL + "/api/v0/notes";
 
     @Test
     void createTextNote_verifyItWasSaved() throws Exception {
-        Note note = new TextNote();
+        Note note = new Note();
         note.setTitle("Sample Title");
         note.setTextContent("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.");
 
-        MockHttpServletResponse response = mockMvc.perform(post(API_PATH + "/text")
+        MockHttpServletResponse response = mockMvc.perform(post(API_PATH + "/new")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(note)))
                 .andExpect(status().isOk())
@@ -49,7 +50,7 @@ class TextNoteControllerTest {
 
         Long id = objectMapper.readValue(response.getContentAsString(), Long.class);
 
-        mockMvc.perform(get(API_PATH + "/text")
+        mockMvc.perform(get(API_PATH + "/by/ids")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(List.of(id))))
                 .andExpect(status().isOk())
@@ -61,11 +62,11 @@ class TextNoteControllerTest {
 
     @Test
     void createTextNote_deleteIt_checkItIsNotPresentInDB() throws Exception {
-        Note note = new TextNote();
+        Note note = new Note();
         note.setTitle("New Title");
         note.setTextContent("Example message content for text note test case.");
 
-        MockHttpServletResponse response = mockMvc.perform(post(API_PATH + "/text")
+        MockHttpServletResponse response = mockMvc.perform(post(API_PATH + "/new")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(note)))
                 .andExpect(status().isOk())
@@ -77,12 +78,12 @@ class TextNoteControllerTest {
 
         Long id = objectMapper.readValue(response.getContentAsString(), Long.class);
 
-        mockMvc.perform(delete(API_PATH + "/text")
+        mockMvc.perform(delete(API_PATH)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(List.of(id))))
                 .andExpect(status().isNoContent());
 
-        mockMvc.perform(get(API_PATH + "/")
+        mockMvc.perform(get(API_PATH + "/by/ids")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(List.of(id))))
                 .andExpect(status().isNotFound());
