@@ -1,13 +1,15 @@
 import { defineConfig, mergeConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import tailwindConfig from './tailwind.config.js'
 
 // @ts-expect-error process is a nodejs global
 const host = process.env.TAURI_DEV_HOST
+const base_path = process.env.VITE_BASE_PATH
 
 // https://vite.dev/config/
 export default defineConfig(async () => ({
+
+  base: base_path || "/cloud-notes",
 
   plugins: [tailwindcss(), react()],
 

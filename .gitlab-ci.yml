@@ -6,6 +6,7 @@ stages:
 
 variables:
   GLEAM_ENV: dev
+  VITE_BASE_PATH: "/cloud-notes/"
 
 cache:
   key: gleam
@@ -26,7 +27,6 @@ pages:
   script:
     - cd client
     - bun install
-    - export VITE_BASE_PATH="/cloud-notes/"
     - bun vite build
     - mv dist ../public
   artifacts:
