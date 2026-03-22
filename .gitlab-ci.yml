@@ -21,7 +21,6 @@ test:
     - gleam deps download
     - gleam test
 
-
 pages:
   stage: deploy_frontend
   script:
