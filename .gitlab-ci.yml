@@ -22,8 +22,9 @@ test:
     - gleam deps download
     - gleam test
 
-pages:
-  stage: deploy_frontend
+create-pages:
+  pages: true
+  stage: deploy
   script:
     - cd client
     - bun install
