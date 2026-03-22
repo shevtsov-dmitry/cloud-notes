@@ -1,0 +1,34 @@
+image: cloud_notes_runtime:latest
+
+stages:
+  - test
+  - deploy_frontend
+
+variables:
+  GLEAM_ENV: dev
+
+cache:
+  key: gleam
+  paths:
+    - build/
+    - ~/.cache/rebar3
+    - ~/.cache/gleam
+
+test:
+  stage: test
+  script:
+    - gleam deps download
+    - gleam test
+
+
+pages:
+  stage: deploy_frontend
+  script:
+    - cd client
+    - bun install
+    - export VITE_BASE_PATH="/cloud-notes/"
+    - bun vite build
+    - mv dist ../public
+  artifacts:
+    paths:
+      - public
