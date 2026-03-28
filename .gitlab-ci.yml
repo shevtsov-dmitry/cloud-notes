@@ -1,4 +1,4 @@
-image: cloud-notes-runtime:latest
+image: registry.gitlab.local/root/cloud-notes/runtime
 
 stages:
     - test
