@@ -1,12 +1,16 @@
-import Footer from './components/Footer'
+import AddNote from './components/AddNote'
+import NotesList from './components/NotesList'
+import SearchNote from './components/SearchNote'
 import './index.css'
 
-export function App() {
-  return (
-    <main className="">
-      <Footer />
-    </main>
-  )
-}
+const App = () => (
+  <main className="min-h-screen min-w-screen bg-[#333]">
+    <div className="flex w-full justify-around gap-[2%]">
+      <AddNote />
+      <SearchNote />
+    </div>
+    <NotesList />
+  </main>
+)
 
 export default App
