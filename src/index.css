@@ -1,1 +1,10 @@
 @import 'tailwindcss';
+
+main {
+  @apply px-3;
+}
+
+.add-text-field-input,
+.search-text-field-input {
+  @apply my-3 w-full rounded-md border-2 border-neutral-300 text-center text-neutral-500;
+}

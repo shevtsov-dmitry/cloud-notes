@@ -5,7 +5,7 @@ import './index.css'
 
 const App = () => (
   <main className="min-h-screen min-w-screen bg-[#333]">
-    <div className="flex w-full justify-around gap-[2%]">
+    <div className="flex w-full justify-around gap-3">
       <AddNote />
       <SearchNote />
     </div>

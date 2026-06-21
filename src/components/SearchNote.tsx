@@ -1,7 +1,7 @@
 const SearchNote = () => {
   return (
-    <div className="">
-      <p>Search Note.</p>
+    <div className="search-text-field-input">
+      <input type="text" placeholder="Search notes" />
     </div>
   )
 }

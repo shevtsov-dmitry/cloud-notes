@@ -1,7 +1,7 @@
 const AddNote = () => {
   return (
-    <div className="">
-      <p>Add Note.</p>
+    <div className="add-text-field-input">
+      <input type="text" placeholder="Add note" />
     </div>
   )
 }
